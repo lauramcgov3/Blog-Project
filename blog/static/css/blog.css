@@ -1,0 +1,33 @@
+h1 a, {
+    color: #87CEFA;
+}
+
+h2 a {
+    color: #191970
+}
+
+title {
+    color:
+}
+header {
+    text-align:center;
+    padding-top: 10px;
+    padding-bottom:10px;
+    background-color: lightblue;
+}
+
+.posts {
+    padding-left:10px;
+}
+
+.date {
+    font-style: italic;
+    color: #A9A9A9;
+    padding-bottom:5px;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
