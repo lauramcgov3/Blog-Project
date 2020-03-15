@@ -1,15 +1,7 @@
-from django.db import models
-
-
-# Create your models here.
-
-class Blog(models.Model):
-    title = models.CharField(max_length=250)
-    body = models.TextField()
-    publish_date = models.DateTimeField('published date')
-    tag = models.TextField()
-
-
-
-  class Tags(models.Model):
-    tag = models.TextField()
+    if form.is_valid():
+        post = form.save(commit=False)
+        post.publish_date = timezone.now()
+        post.save()
+        return redirect('post_detail', pk=post.pk)
+    else:
+        form = PostForm(instance=obj)

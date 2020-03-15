@@ -17,12 +17,13 @@
                 <div class="col-md-8">
                     {% for post in posts %}
                         <div class="posts">
-                        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-                        <p class="date">{{ post.publish_date }}</p>
+                            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                            <p class="date">{{ post.publish_date }}</p>
+                            <p> {{post.tag.tag }}</p>
                         </div>
                     {% endfor %}
-                <button class="btn btn-dark"><a href="/">Create new blog post</a> </button>
-                <button class="btn btn-dark"><a href="/">Go back to Home</a> </button>
+                <button class="btn btn-dark"><a href="{% url 'post_new' %}">Create new blog post</a> </button>
+                <button class="btn btn-dark"><a href="{%url 'home' %}">Go back to Home</a> </button>
                 </div>
             </div>
         </div>

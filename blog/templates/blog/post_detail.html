@@ -17,6 +17,9 @@
                     {% block content %}
                         <div class="post">
                             <h2>{{ post.title }}</h2>
+                           <a href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span> </a>
+                            <br>
+                            <a href="{% url 'post_delete' pk=post.pk %}"><span class="glyphicon glyphicon-trash"></span> </a>
                                 <div class="date">
                                     {{ post.publish_date }}
                                 </div>

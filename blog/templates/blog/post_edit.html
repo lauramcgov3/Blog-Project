@@ -1,0 +1,29 @@
+{% load static %}
+<html>
+    <head>
+        <title>Blog Posts</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <header>
+            <h1>Edit Blog</h1>
+        </header>
+    </head>
+    <body>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8 col-centered">
+                    {% block content %}
+                        <h2>New post</h2>
+                        <form method="POST" class="post-form">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit" class="save btn btn-default">Save</button>
+                        </form>
+                     <button class="btn btn-default"><a href="{%url 'post_list' %}"> Cancel</a></button>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
